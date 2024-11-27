@@ -1,0 +1,95 @@
+/* From Uiverse.io by Praashoo7 */ 
+#input {
+    margin-left: 19px;
+    height: 10px;
+    width: 330px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+  }
+  
+  #input:focus {
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+               -13px -13px 100px #ffffff;
+  }
+
+
+  #inner{
+    height: 300px ;
+    width: 390px;
+     border: 1px solid black;
+      margin-top: 19px;
+       margin-left: 23px;
+        margin-bottom: 19px; 
+        margin-right: 20px;
+         border-radius: 10px; 
+         background-color: lightgray;
+  }
+
+  .email{
+    height:400px; 
+    width: 420px;
+    margin: auto;
+  }
+
+
+  /* From Uiverse.io by cssbuttons-io */ 
+.btn {
+    margin-top: 30px;
+    margin-left: 19px;
+
+    height: 40px;
+    position: relative;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    /* padding: 1em 2.5em; */
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 6em;
+    transition: all 0.2s;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: black;
+    background-color: lightgray;
+  }
+  
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+  
+  .btn::after {
+    background-color: #fff;
+  }
+  
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+  }
+  

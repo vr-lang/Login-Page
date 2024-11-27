@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image: url(https://img.freepik.com/premium-vector/modern-geometrical-shapes-repeat-pattern-background_920742-162.jpg?w=740);" >
+    
+    <div  class="email" >
+        <div  id="inner">
+            <p style="margin-top: 23px;margin-left: 20px;" >Email</p>
+            
+            <input type="text" autocomplete="off" name="text" id="input" class="Email" placeholder="Email">
+            <span style="color: red; margin-left: 21px;margin-top: 30px;" id="email error"></span>
+            
+            <p style="margin-top: 23px;margin-left: 20px;">Password</p>
+
+            <input type="text" autocomplete="off" name="text" id="input" class="pass" placeholder="Password">
+            <span style="color: red; margin-left: 21px;" id="password error"></span>
+
+            <button class="btn">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const emailInput = document.querySelector(".Email");
+            const passwordInput = document.querySelector(".pass");
+            const submitButton = document.querySelector(".btn");
+
+            const emailError = document.getElementById("email error");
+            const passwordError = document.getElementById("password error");
+
+            // Email validation function
+            function validateEmail() {
+                const email = emailInput.value;
+                if (email.length <= 3 || !email.includes("@") || !email.includes(".")) {
+                    emailError.textContent = "Invalid email.";
+                    return false;
+                } else {
+                    emailError.textContent = "";
+                    return true;
+                }
+            }
+
+            // Password validation function
+            function validatePassword() {
+                const password = passwordInput.value;
+                if (password.length <= 8) {
+                    passwordError.textContent = "Password must be more than 8 characters.";
+                    return false;
+                } else {
+                    passwordError.textContent = "";
+                    return true;
+                }
+            }
+
+            // Add change listeners for email and password
+            emailInput.addEventListener("input", validateEmail);
+            passwordInput.addEventListener("input", validatePassword);
+
+            // Form submit handler
+            submitButton.addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent form submission
+
+                // Validate both fields
+                const emailValid = validateEmail();
+                const passwordValid = validatePassword();
+
+                // If both email and password are valid, show confirmation window
+                if (emailValid && passwordValid) {
+                    const confirmSignup = confirm("Are you sure you want to submit?");
+                    if (confirmSignup) {
+                        alert("Successful signup!");
+                    } else {
+                        // Reset form if cancelled
+                        emailInput.value = "";
+                        passwordInput.value = "";
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
